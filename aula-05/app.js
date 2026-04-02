@@ -179,7 +179,8 @@ app.get('/v1/brasil/doc', function (req, res) {
 })
 
 
+const PORT = process.env.PORT || 8080;
 
-app.listen(8080, function(){
-    console.log(`✅ API rodando e aguardando novas requisições`);
-})
+app.listen(PORT, function(){
+    console.log(`✅ API rodando na porta ${PORT} e aguardando novas requisições`);
+});
