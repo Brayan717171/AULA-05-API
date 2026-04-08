@@ -44,8 +44,13 @@ app.use(cors(corsOption));
 // GET /v1/brasil/dados/estado/:uf
 // Exemplo: http://localhost:8080/v1/brasil/dados/estado/sp
 // ============================================================
-app.get('/v1/brasil/dados/estado/:uf', function (req, res) {
-    let { uf } = req.params
+app.get('/v1/brasil/dados/estado/', function (req, res) {
+    //Recebe a variavavel UF atraves da URL separado pela /
+    // let { uf } = req.paramas.uf
+
+    //Recebe a variavel UF via Query Params, que são variaveis encaminhadas
+        //apos o simbolo de ?
+    let { uf } = req.query
     let estados = funcoes.getDadosEstado(uf)
 
     if (estados) {
